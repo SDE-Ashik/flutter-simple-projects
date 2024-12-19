@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "29048f50-486e-40dc-94e6-c3f5c47aa434",
+		"name": "Flutter_Project_Api",
+		"description": "Register Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28843128"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ABC\",\r\n    \"password\": \"123\",\r\n    \"confirm_password\": \"123\",\r\n    \"name\": \"ABC\",\r\n    \"email\": \"ABC.doe@example.com\",\r\n    \"phone_number\": \"1234567890\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.brandexperts.ae/api/register/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"brandexperts",
+						"ae"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ABC\",\r\n    \"password\": \"123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.brandexperts.ae/api/login/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"brandexperts",
+						"ae"
+					],
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employee List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MTE1NDY4LCJpYXQiOjE3MzQ1MjM0NjgsImp0aSI6IjlhNmZhYTJlNWIwYjRjY2FhOWQ5NmQ5OTgwMGFkOGE3IiwidXNlcl9pZCI6OH0.z3neK72KLBYwz_Ngj2osI5MVsOCMlAa_SGnWWZmSjN0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.brandexperts.ae/api/employees/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"brandexperts",
+						"ae"
+					],
+					"path": [
+						"api",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Time Stamp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MTE1NDY4LCJpYXQiOjE3MzQ1MjM0NjgsImp0aSI6IjlhNmZhYTJlNWIwYjRjY2FhOWQ5NmQ5OTgwMGFkOGE3IiwidXNlcl9pZCI6OH0.z3neK72KLBYwz_Ngj2osI5MVsOCMlAa_SGnWWZmSjN0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"employee\": 1,\r\n  \"project\": 1,\r\n  \"start_timestamp\": \"2024-01-01T09:00:00Z\",\r\n  \"end_timestamp\": \"2024-01-01T17:00:00Z\",\r\n  \"start_location\": \"Office\",\r\n  \"end_location\": \"Office\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.brandexperts.ae/api/timesheet/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"brandexperts",
+						"ae"
+					],
+					"path": [
+						"api",
+						"timesheet",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MTE1NDY4LCJpYXQiOjE3MzQ1MjM0NjgsImp0aSI6IjlhNmZhYTJlNWIwYjRjY2FhOWQ5NmQ5OTgwMGFkOGE3IiwidXNlcl9pZCI6OH0.z3neK72KLBYwz_Ngj2osI5MVsOCMlAa_SGnWWZmSjN0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Project BACD\",\r\n    \"description\": \"Project B description\",\r\n    \"start_date\": \"2024-02-01\",\r\n    \"end_date\": \"2024-11-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.brandexperts.ae/api/projects/1/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"brandexperts",
+						"ae"
+					],
+					"path": [
+						"api",
+						"projects",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Project List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MTE1NDY4LCJpYXQiOjE3MzQ1MjM0NjgsImp0aSI6IjlhNmZhYTJlNWIwYjRjY2FhOWQ5NmQ5OTgwMGFkOGE3IiwidXNlcl9pZCI6OH0.z3neK72KLBYwz_Ngj2osI5MVsOCMlAa_SGnWWZmSjN0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.brandexperts.ae/api/projects/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"brandexperts",
+						"ae"
+					],
+					"path": [
+						"api",
+						"projects",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
