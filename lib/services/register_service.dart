@@ -178,8 +178,9 @@ import 'package:flutterproject/model/login_model.dart';
 import 'package:flutterproject/model/registration_model.dart';
 
 class ApiService {
+  
   final Dio _dio = Dio();
-
+late String acesstoke;
   Future<Response?> registerUser(RegistrationModel model) async {
     const String apiUrl = "https://api.brandexperts.ae/api/register/";
 
@@ -193,6 +194,7 @@ class ApiService {
       );
 
       if (response.statusCode == 201) {
+        
         print("Registration Successful: ${response.data}");
         return response;
       } else {
@@ -224,6 +226,7 @@ class ApiService {
       );
 
       if (response.statusCode == 200) {
+        print(response.data);
         print("Login Successful: ${response.data}");
         return response;
       } else {

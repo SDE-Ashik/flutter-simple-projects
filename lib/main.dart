@@ -42,6 +42,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterproject/pages/login_page.dart';
 import 'package:flutterproject/pages/signup_pge.dart';
 import 'package:flutterproject/provider/login_provider.dart';
+import 'package:flutterproject/provider/project_provider.dart';
 import 'package:flutterproject/provider/registration_provider.dart';
 import 'package:flutterproject/services/register_service.dart';
 import 'dart:convert';
@@ -93,6 +94,7 @@ void main() => runApp(
         providers: [
           ChangeNotifierProvider(create: (_) => RegistrationProvider()),
              ChangeNotifierProvider(create: (_) => LoginProvider()),
+          ChangeNotifierProvider(create: (_) => ProjectProvider()),
 
         ],
         child: MyApp(),
@@ -227,6 +229,83 @@ class MyApp extends StatelessWidget {
 //             ],
 //           ),
 //         ),
+//       ),
+//     );
+//   }
+// }
+
+// import 'dart:convert';
+// import 'package:flutter/material.dart';
+// import 'package:flutterproject/pages/home_page.dart';
+// import 'package:http/http.dart' as http;
+
+// void main() => runApp(ProjectApp());
+
+// class ProjectApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: HomePage(),
+//     );
+//   }
+// }
+
+// class ProjectListPage extends StatefulWidget {
+//   @override
+//   _ProjectListPageState createState() => _ProjectListPageState();
+// }
+
+// class _ProjectListPageState extends State<ProjectListPage> {
+//   Future<List<dynamic>> fetchProjects() async {
+//     final url = Uri.parse('https://api.brandexperts.ae/api/projects/');
+//     final response = await http.get(
+//       url,
+//       headers: {
+//         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM3MjI5Mjc5LCJpYXQiOjE3MzQ2MzcyNzksImp0aSI6ImNjMGUwNWM0ZWM1MjRiZDJhNGUwYTUzMjY5ZjJhMTBjIiwidXNlcl9pZCI6MTZ9.VwN7TjfebbaMl4j_AsMcRH4K4FnUrL_T7CYtIpFVytA',
+//       },
+//     );
+
+//     if (response.statusCode == 200) {
+//       return json.decode(response.body);
+//     } else if (response.statusCode == 401) {
+//       throw Exception('Unauthorized: Check your token');
+//     } else {
+//       throw Exception(
+//           'Failed to load projects. Status code: ${response.statusCode}');
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Projects'),
+//       ),
+//       body: FutureBuilder<List<dynamic>>(
+//         future: fetchProjects(),
+//         builder: (context, snapshot) {
+//           if (snapshot.connectionState == ConnectionState.waiting) {
+//             return Center(child: CircularProgressIndicator());
+//           } else if (snapshot.hasError) {
+//             return Center(child: Text('Error: ${snapshot.error}'));
+//           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+//             return Center(child: Text('No projects found'));
+//           } else {
+//             final projects = snapshot.data!;
+//             return ListView.builder(
+//               itemCount: projects.length,
+//               itemBuilder: (context, index) {
+//                 final project = projects[index];
+//                 return Card(
+//                   child: ListTile(
+//                     title: Text(project['name']),
+//                     subtitle: Text(project['description']),
+//                   ),
+//                 );
+//               },
+//             );
+//           }
+//         },
 //       ),
 //     );
 //   }
